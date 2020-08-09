@@ -1,4 +1,5 @@
-//
+//Objective is to split a linked list into 'k' equal parts, where any overflow
+//nodes go into the beginning nodes until they run out
 
 class Node {
     constructor(val, next = null) { //if next is not given, assume it is empty
@@ -35,8 +36,8 @@ head.next.next.next.next = new Node(5)
 let k = 2
 
 
-//Objective is to split a linked list into 'k' equal parts, where any overflow
-//nodes go into the beginning nodes until they run out
+//O(n) solution that finds the width of each split in the linked list,
+//then iterates with the remainder in mind
 
 let curr = head
 let count = 0
@@ -68,5 +69,4 @@ for (let i = 0; i < k; i++) {
     result[i] = head.next
 }
 
-console.log(result)
 return result
